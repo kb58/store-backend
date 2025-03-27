@@ -74,7 +74,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
             return;
         }
 
-        const token = jwt.sign({ userId: user._id ,userRole:user.role}, process.env.JWT_SECRET as string);
+        const token = jwt.sign({ userId: user._id ,userRole:user.role,userName:user.username}, process.env.JWT_SECRET as string);
 
         res.cookie("token", token, {
             httpOnly: true,

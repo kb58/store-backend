@@ -6,6 +6,7 @@ import stockRoutes from "./routes/stock.routes"
 import dashboardRoutes from "./routes/dashboard.routes"
 import orderStatsRoutes from "./routes/orderStats.routes"
 import orderRoutes from "./routes/order.routes"
+import blogRoutes from './routes/blog.routes'
 import connectDB from "./lib/connectDB"
 
 const app = express();
@@ -20,6 +21,7 @@ app.use('/api/v1', inventoryRoutes);
 app.use("/api/v1/orders", orderStatsRoutes);
 app.use("/api/v1/orders", orderRoutes);
 app.use("/api/v1/dashboard",dashboardRoutes);
+app.use("/api/v1/blogs",blogRoutes);
 
 
 connectDB();

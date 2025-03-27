@@ -26,6 +26,7 @@ export const verifyToken = (req: AuthenticatedRequest, res: Response, next: Next
 
             req.userId = (payload as { userId: string }).userId;
             req.role=(payload as {userRole: string}).userRole;
+            req.userName=(payload as {userName:string}).userName;
             next();
         });
     } catch (error) {
